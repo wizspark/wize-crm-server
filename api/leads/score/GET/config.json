@@ -1,0 +1,5 @@
+{
+  "name": "Get Customer Score",
+  "path": "/leads/score",
+  "method": "GET"
+}

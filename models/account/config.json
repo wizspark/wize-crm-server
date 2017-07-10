@@ -50,18 +50,28 @@
     "revenue": {
       "displayName": "Revenue",
       "type": "WIZE_MONEY",
-      "allowNull": false,
+      "allowNull": true,
+      "unique": false,
       "defaultValue": null,
       "comment": null
     },
     "industry": {
       "displayName": "Industry",
       "type": "ENUM('Aerospace','Agriculture','Banking','Construction','Defense','Education','Energy','Entertainment','Financial Services ','Insurance','Food','Health Care','Hospitality','IT','Manufacturing','Media','Pharmaceuticals','Telecommunications','Transport','Utilities','Others')",
+      "allowNull": true,
+      "unique": false,
       "defaultValue": null,
       "comment": null
     }
   },
-  "relationships": [],
+  "relationships": [
+    {
+      "target": "Opportunity",
+      "type": "hasMany",
+      "displayName": "Opportunities",
+      "options": {}
+    }
+  ],
   "api": {
     "methods": [
       "*"

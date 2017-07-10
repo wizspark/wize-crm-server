@@ -103,7 +103,8 @@
     "dnbScore": {
       "displayName": "D&B Score",
       "type": "INTEGER",
-      "allowNull": false,
+      "allowNull": true,
+      "primaryKey": false,
       "unique": false,
       "autoIncrement": false,
       "defaultValue": null,

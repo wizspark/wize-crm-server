@@ -43,6 +43,8 @@
     "stage": {
       "displayName": "Stage",
       "type": "ENUM('Qualification','Needs Analysis','Proposal','Negotiation','Closed Won','Closed Lost')",
+      "allowNull": true,
+      "unique": false,
       "defaultValue": null,
       "comment": null
     },
@@ -54,18 +56,11 @@
       "defaultValue": null,
       "comment": null
     },
-    "accountName": {
-      "displayName": "Account Name",
-      "type": "STRING",
-      "allowNull": false,
-      "unique": false,
-      "defaultValue": null,
-      "comment": null
-    },
     "probability": {
       "displayName": "Probability",
       "type": "INTEGER",
-      "allowNull": false,
+      "allowNull": true,
+      "primaryKey": false,
       "unique": false,
       "autoIncrement": false,
       "defaultValue": null,
@@ -74,20 +69,28 @@
     "value": {
       "displayName": "Value",
       "type": "WIZE_MONEY",
-      "allowNull": false,
+      "allowNull": true,
+      "unique": false,
       "defaultValue": null,
       "comment": null
     },
     "expectedClose": {
       "displayName": "Expected Close",
       "type": "DATEONLY",
-      "allowNull": false,
+      "allowNull": true,
       "unique": false,
       "defaultValue": null,
       "comment": null
     }
   },
-  "relationships": [],
+  "relationships": [
+    {
+      "target": "Account",
+      "type": "belongsTo",
+      "displayName": "Account",
+      "options": {}
+    }
+  ],
   "api": {
     "methods": [
       "*"
