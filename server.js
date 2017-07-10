@@ -13,9 +13,9 @@ const authenticateAndStart = ()=>{
   const Source = require('./sources/postgresql').default;
   if(!Source.invalid) {
     const createModels = require('./models').default;
-    Source.authenticate().then(function(){
+    Source.authenticate().then(function() {
       console.info('Connected to DB, Starting App...');
-      createModels(!!null, !!null, (process.env[`ENVIRONMENT`] === 'dev')).then(function(){
+      createModels(!!null, !!null).then(function(){
         try{
           createServer();
         }

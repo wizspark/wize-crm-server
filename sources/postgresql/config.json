@@ -3,11 +3,14 @@
   "type": "SQL",
   "dbName": "crm",
   "user": "postgres",
-  "password": "admin@1234",
+  "password": "wizni@123",
   "host": "localhost",
   "port": 5432,
   "dialect": "postgres",
   "options": {
+    "sync": {
+      "force": true
+    },
     "logging": false,
     "pool": {
       "max": 1,
