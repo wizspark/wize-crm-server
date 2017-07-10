@@ -1,8 +1,11 @@
 {
     "@wizeapps/sequelize-acl": {
-        "priority": 2
+        "priority": 1
     },
     "@wizeapps/charts-runtime": {
         "priority": 2
+    },
+    "@wizeapps/rule-engine": {
+        "priority": 3
     }
 }

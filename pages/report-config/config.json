@@ -1,0 +1,263 @@
+{
+  "name": "Report Config",
+  "route": "wize/admin/reports",
+  "pageType": "module",
+  "entities": [
+    {
+      "primary": true,
+      "name": "Opportunity",
+      "template": "datatable",
+      "apis": {
+        "get": "/api/opportunities",
+        "association": "",
+        "order": "",
+        "post": "/api/opportunities",
+        "patch": "/api/opportunities",
+        "delete": "/api/opportunities"
+      },
+      "viewOptions": {
+        "type": "basic",
+        "isSelection": false,
+        "paginator": true,
+        "rows": 10,
+        "stacked": "stacked",
+        "responsive": true,
+        "resizableColumns": true,
+        "reorderableColumns": true,
+        "disabled": false
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "type": "INTEGER",
+          "autoIncrement": true,
+          "primaryKey": true,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "createdAt",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "type": "DATE",
+          "required": true,
+          "displayName": "Created At",
+          "defaultValue": "NOW",
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "updatedAt",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "type": "DATE",
+          "required": true,
+          "displayName": "Updated At",
+          "defaultValue": "NOW",
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "createdBy",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "type": "STRING",
+          "allowNull": true,
+          "displayName": "Created By",
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "modifiedBy",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "type": "STRING",
+          "allowNull": true,
+          "displayName": "Modified By",
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "opportunityName",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Opportunity Name",
+          "type": "STRING",
+          "allowNull": false,
+          "unique": false,
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "stage",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Stage",
+          "type": "ENUM('Qualification','Needs Analysis','Proposal','Negotiation','Closed Won','Closed Lost')",
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "owner",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Owner",
+          "type": "STRING",
+          "allowNull": false,
+          "unique": false,
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "accountName",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Account Name",
+          "type": "STRING",
+          "allowNull": false,
+          "unique": false,
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "probability",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Probability",
+          "type": "INTEGER",
+          "allowNull": false,
+          "unique": false,
+          "autoIncrement": false,
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "value",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Value",
+          "type": "WIZE_MONEY",
+          "allowNull": false,
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        },
+        {
+          "name": "expectedClose",
+          "summary": false,
+          "sortable": false,
+          "filterable": false,
+          "displayName": "Expected Close",
+          "type": "DATEONLY",
+          "allowNull": false,
+          "unique": false,
+          "defaultValue": null,
+          "comment": null,
+          "viewOptions": {
+            "noView": false,
+            "noUnique": true,
+            "noSortable": false,
+            "noFilterable": false,
+            "noEdit": false
+          }
+        }
+      ],
+      "relationships": [],
+      "fact": null,
+      "factSchema": null
+    }
+  ],
+  "actions": {
+    "noHeader": false,
+    "headerOptions": {
+      "noSearch": false,
+      "noFilter": false,
+      "noImport": false,
+      "noExport": false,
+      "noCreate": false,
+      "noDelete": false,
+      "noEdit": false,
+      "noColumnSelector": false
+    }
+  },
+  "layout": "SYSTEM"
+}
