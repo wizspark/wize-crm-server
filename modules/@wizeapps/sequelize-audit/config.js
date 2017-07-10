@@ -1,0 +1,1 @@
+const config = { get() { return {"exclude":["id","createdAt","updatedAt"]}; } }; export default config;

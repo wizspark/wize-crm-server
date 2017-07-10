@@ -10,7 +10,7 @@
     "@wize/runtime-metadata": "latest",
     "@wize/sequelize-runtime": "latest",
     "@wize/sequelize-source": "latest",
-    "@wize/soap-runtime": "^1.0.2",
+    "@wize/soap-runtime": "latest",
     "@wizeapps/charts-runtime": "latest",
     "@wizeapps/rule-engine": "latest",
     "@wizeapps/sequelize-acl": "latest",
