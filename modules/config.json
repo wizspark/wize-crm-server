@@ -1,0 +1,8 @@
+{
+    "@wizeapps/sequelize-acl": {
+        "priority": 2
+    },
+    "@wizeapps/charts-runtime": {
+        "priority": 2
+    }
+}

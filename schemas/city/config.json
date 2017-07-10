@@ -1,0 +1,13 @@
+{
+  "name": "City",
+  "type": "STRING",
+  "optional": true,
+  "possibleValues": null,
+  "model": null,
+  "displayName": "City",
+  "allowNull": true,
+  "primaryKey": false,
+  "unique": false,
+  "defaultValue": null,
+  "comment": null
+}

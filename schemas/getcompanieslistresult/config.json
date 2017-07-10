@@ -1,0 +1,23 @@
+{
+  "name": "getcompanieslistresult",
+  "acl": false,
+  "dbType": "SOAP",
+  "enableDocument": true,
+  "strict": false,
+  "versioning": false,
+  "schemaDef": {},
+  "relationships": [
+    {
+      "target": "Company",
+      "type": "hasMany",
+      "displayName": "",
+      "options": ""
+    }
+  ],
+  "api": {
+    "methods": [
+      "POST"
+    ],
+    "name": "getcompanieslistresult"
+  }
+}

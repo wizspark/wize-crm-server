@@ -1,0 +1,41 @@
+{
+  "name": "company",
+  "acl": false,
+  "dbType": "SOAP",
+  "enableDocument": true,
+  "strict": false,
+  "versioning": false,
+  "schemaDef": {},
+  "relationships": [
+    {
+      "target": "Name",
+      "type": "hasMany",
+      "displayName": "",
+      "options": ""
+    },
+    {
+      "target": "Industry",
+      "type": "hasMany",
+      "displayName": "",
+      "options": ""
+    },
+    {
+      "target": "State",
+      "type": "hasMany",
+      "displayName": "",
+      "options": ""
+    },
+    {
+      "target": "City",
+      "type": "hasMany",
+      "displayName": "",
+      "options": ""
+    }
+  ],
+  "api": {
+    "methods": [
+      "POST"
+    ],
+    "name": "company"
+  }
+}

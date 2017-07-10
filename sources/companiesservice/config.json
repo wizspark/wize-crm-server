@@ -1,0 +1,42 @@
+{
+  "name": "CompaniesService",
+  "type": "SOAP",
+  "wsdl": "http://services.wizni.com/Service.asmx?WSDL",
+  "binding": "ServiceSoap",
+  "port": "ServiceSoap",
+  "operations": [
+    {
+      "operation": "GetCompaniesList",
+      "request": {
+        "s11:Envelope": {
+          "xmlns:s11": "http://schemas.xmlsoap.org/soap/envelope/",
+          "s11:Body": {
+            "ns1:GetCompaniesList": {
+              "xmlns:ns1": "http://tempuri.org/"
+            }
+          }
+        }
+      },
+      "response": {
+        "s11:Envelope": {
+          "xmlns:s11": "http://schemas.xmlsoap.org/soap/envelope/",
+          "s11:Body": {
+            "ns1:GetCompaniesListResponse": {
+              "xmlns:ns1": "http://tempuri.org/",
+              "ns1:GetCompaniesListResult": {
+                "ns1:Company": {
+                  "ns1:State": "?XXX?",
+                  "ns1:Industry": "?XXX?",
+                  "ns1:City": "?XXX?",
+                  "ns1:Name": "?XXX?"
+                }
+              }
+            }
+          }
+        }
+      },
+      "restApiPath": "/soap/CompaniesService/GetCompaniesList"
+    }
+  ],
+  "options": ""
+}

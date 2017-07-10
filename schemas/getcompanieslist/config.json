@@ -1,0 +1,26 @@
+{
+  "name": "getcompanieslist",
+  "acl": false,
+  "dbType": "SOAP",
+  "enableDocument": true,
+  "strict": false,
+  "versioning": false,
+  "schemaDef": {
+    "ns1": {
+      "displayName": "ns1",
+      "type": "STRING",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    }
+  },
+  "relationships": [],
+  "api": {
+    "methods": [
+      "POST"
+    ],
+    "name": "getcompanieslist"
+  }
+}

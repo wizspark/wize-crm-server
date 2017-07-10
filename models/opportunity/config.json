@@ -1,0 +1,98 @@
+{
+  "acl": false,
+  "dbType": "SQL",
+  "enableDocument": true,
+  "strict": false,
+  "versioning": false,
+  "schemaDef": {
+    "id": {
+      "type": "INTEGER",
+      "autoIncrement": true,
+      "primaryKey": true
+    },
+    "createdAt": {
+      "type": "DATE",
+      "required": true,
+      "displayName": "Created At",
+      "defaultValue": "NOW"
+    },
+    "updatedAt": {
+      "type": "DATE",
+      "required": true,
+      "displayName": "Updated At",
+      "defaultValue": "NOW"
+    },
+    "createdBy": {
+      "type": "STRING",
+      "allowNull": true,
+      "displayName": "Created By"
+    },
+    "modifiedBy": {
+      "type": "STRING",
+      "allowNull": true,
+      "displayName": "Modified By"
+    },
+    "opportunityName": {
+      "displayName": "Opportunity Name",
+      "type": "STRING",
+      "allowNull": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    },
+    "stage": {
+      "displayName": "Stage",
+      "type": "ENUM('Qualification','Needs Analysis','Proposal','Negotiation','Closed Won','Closed Lost')",
+      "defaultValue": null,
+      "comment": null
+    },
+    "owner": {
+      "displayName": "Owner",
+      "type": "STRING",
+      "allowNull": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    },
+    "accountName": {
+      "displayName": "Account Name",
+      "type": "STRING",
+      "allowNull": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    },
+    "probability": {
+      "displayName": "Probability",
+      "type": "INTEGER",
+      "allowNull": false,
+      "unique": false,
+      "autoIncrement": false,
+      "defaultValue": null,
+      "comment": null
+    },
+    "value": {
+      "displayName": "Value",
+      "type": "WIZE_MONEY",
+      "allowNull": false,
+      "defaultValue": null,
+      "comment": null
+    },
+    "expectedClose": {
+      "displayName": "Expected Close",
+      "type": "DATEONLY",
+      "allowNull": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    }
+  },
+  "relationships": [],
+  "api": {
+    "methods": [
+      "*"
+    ],
+    "name": "opportunities"
+  },
+  "name": "Opportunity"
+}
