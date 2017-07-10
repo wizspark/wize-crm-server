@@ -5,37 +5,65 @@
   "enableDocument": true,
   "strict": false,
   "versioning": false,
-  "schemaDef": {},
-  "relationships": [
-    {
-      "target": "Name",
-      "type": "hasMany",
-      "displayName": "",
-      "options": ""
+  "schemaDef": {
+    "name": {
+      "displayName": "Company",
+      "type": "OBJECT",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
     },
-    {
-      "target": "Industry",
-      "type": "hasMany",
-      "displayName": "",
-      "options": ""
+    "industry": {
+      "displayName": "Company",
+      "type": "OBJECT",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
     },
-    {
-      "target": "State",
-      "type": "hasMany",
-      "displayName": "",
-      "options": ""
+    "state": {
+      "displayName": "Company",
+      "type": "OBJECT",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
     },
-    {
-      "target": "City",
-      "type": "hasMany",
-      "displayName": "",
-      "options": ""
+    "city": {
+      "displayName": "Company",
+      "type": "OBJECT",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    },
+    "dnbscore": {
+      "displayName": "Company",
+      "type": "OBJECT",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
     }
-  ],
+  },
+  "relationships": [],
   "api": {
     "methods": [
       "POST"
     ],
     "name": "company"
-  }
+  },
+  "displayName": "Company",
+  "type": "OBJECT",
+  "allowNull": true,
+  "primaryKey": false,
+  "unique": false,
+  "defaultValue": null,
+  "comment": null
 }

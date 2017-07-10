@@ -1,0 +1,26 @@
+{
+  "name": "companyscore",
+  "acl": false,
+  "dbType": "SOAP",
+  "enableDocument": true,
+  "strict": false,
+  "versioning": false,
+  "schemaDef": {
+    "companyname": {
+      "displayName": "companyName",
+      "type": "STRING",
+      "allowNull": true,
+      "primaryKey": false,
+      "unique": false,
+      "defaultValue": null,
+      "comment": null
+    }
+  },
+  "relationships": [],
+  "api": {
+    "methods": [
+      "POST"
+    ],
+    "name": "companyscore"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "rating",
   "type": "SOAP",
-  "wsdl": "http://demo.wizni.com/CustomerRating.asmx?wsdl",
+  "wsdl": "http://demo.wizni.com/CustomerRating.asmx?WSDL",
   "binding": "ServiceSoap",
   "port": "ServiceSoap",
   "operations": [
