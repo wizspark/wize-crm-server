@@ -1,35 +1,31 @@
 require('babel-register');
 
-const seedData = require('./data-seeder').default;
-
-const createServer = ()=>{
+const createServer = () => {
   const app = require('./index').default;
   const port = process.env.PORT || 8080;
 
-  seedData().then(() => {
-    app.createServer().listen(port, function onListen(err) {
-      if (err) throw err;
-      console.info('Application Listening on Port %s', this.address().port);
-    });
+  app.createServer().listen(port, function onListen(err) {
+    if (err) throw err;
+    console.info('Application Listening on Port %s', this.address().port);
   });
 };
 
-const authenticateAndStart = ()=>{
+const authenticateAndStart = () => {
   const Source = require('./sources/postgresql').default;
-  if(!Source.invalid) {
+  if (!Source.invalid) {
     const createModels = require('./models').default;
-    Source.authenticate().then(function() {
+    Source.authenticate().then(function () {
       console.info('Connected to DB, Starting App...');
-      createModels(!!null, !!null).then(function(){
-        try{
+      createModels(!!null, !!null).then(function () {
+        try {
           createServer();
         }
-        catch(ex){
+        catch (ex) {
           console.error(`Error while starting server: ${ex.message}`);
           throw ex;
         }
       });
-    }).catch(function(error){
+    }).catch(function (error) {
       console.error(error);
       console.error('Not Connected trying again...');
       setTimeout(authenticateAndStart, 2000);
