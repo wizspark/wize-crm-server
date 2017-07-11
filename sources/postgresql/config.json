@@ -5,7 +5,7 @@
   "user": "",
   "password": "",
   "host": "",
-  "port": ,
+  "port": 5432,
   "dialect": "postgres",
   "options": {
     "sync": {
