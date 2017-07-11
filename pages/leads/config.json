@@ -198,11 +198,11 @@
           "defaultValue": null,
           "comment": null,
           "viewOptions": {
-            "noView": false,
+            "noView": true,
             "noUnique": true,
-            "noSortable": false,
-            "noFilterable": false,
-            "noEdit": false
+            "noSortable": true,
+            "noFilterable": true,
+            "noEdit": true
           }
         },
         {
@@ -316,7 +316,33 @@
       "noEdit": false,
       "noColumnSelector": false
     },
-    "customActions": []
+    "customActions": [
+      {
+        "name": "Sync D&B",
+        "api": {
+          "path": "/leads/score",
+          "method": "GET",
+          "name": "Get Customer Score"
+        },
+        "layout": "HEADER",
+        "parameters": []
+      },
+      {
+        "name": "Convert",
+        "api": {
+          "path": "/leads/:id/convert",
+          "method": "GET",
+          "name": "Convert Lead to Opportunity"
+        },
+        "layout": "RECORD",
+        "parameters": [
+          {
+            "param": "id",
+            "attribute": "id"
+          }
+        ]
+      }
+    ]
   },
   "layout": "USER"
 }
