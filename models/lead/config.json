@@ -73,7 +73,7 @@
       "comment": null
     },
     "companyName": {
-      "displayName": "CompanyName",
+      "displayName": "Company Name",
       "type": "STRING",
       "allowNull": false,
       "unique": false,
