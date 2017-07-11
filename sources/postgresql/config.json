@@ -1,11 +1,11 @@
 {
   "name": "DATABASE",
   "type": "SQL",
-  "dbName": "crm",
-  "user": "postgres",
-  "password": "admin@1234",
-  "host": "localhost",
-  "port": 5432,
+  "dbName": "",
+  "user": "",
+  "password": "",
+  "host": "",
+  "port": ,
   "dialect": "postgres",
   "options": {
     "sync": {
