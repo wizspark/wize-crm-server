@@ -17,14 +17,19 @@
         "delete": "/api/accounts"
       },
       "viewOptions": {
-        "type": "basic",
+        "type": "detail",
         "isSelection": false,
-        "paginator": true,
+        "paginator": false,
         "rows": 10,
         "stacked": "stacked",
         "responsive": true,
         "resizableColumns": true,
         "reorderableColumns": true,
+        "sortField": "id",
+        "rowGroupMode": "subheader",
+        "expandableRowGroups": true,
+        "sortableRowGroup": false,
+        "expandableRows": true,
         "disabled": false
       },
       "attributes": [
@@ -122,7 +127,7 @@
           "comment": null,
           "viewOptions": {
             "noView": false,
-            "noUnique": true,
+            "noUnique": false,
             "noSortable": false,
             "noFilterable": false,
             "noEdit": false
@@ -466,7 +471,33 @@
       "noEdit": false,
       "noColumnSelector": false
     },
-    "customActions": []
+    "customActions": [
+      {
+        "name": "Refresh",
+        "api": {
+          "path": "/health",
+          "method": "GET",
+          "name": "Health Check"
+        },
+        "layout": "HEADER",
+        "parameters": []
+      },
+      {
+        "name": "Sample",
+        "api": {
+          "path": "/leads/:id/convert",
+          "method": "GET",
+          "name": "Convert Lead to Opportunity"
+        },
+        "layout": "RECORD",
+        "parameters": [
+          {
+            "param": "id",
+            "attribute": "id"
+          }
+        ]
+      }
+    ]
   },
   "layout": "USER"
 }
