@@ -29,6 +29,9 @@ export default async (ctx) => {
         });
         await opportunity.save();
 
+        // delete lead
+        lead.destroy();
+
         ctx.status = 200;
     } catch(err) {
         ctx.body = err.message;
