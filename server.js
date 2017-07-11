@@ -9,7 +9,7 @@ const createServer = ()=>{
   seedData().then(() => {
     app.createServer().listen(port, function onListen(err) {
       if (err) throw err;
-      console.info('Wize Loan Pricer Listening on Port %s', this.address().port);
+      console.info('Application Listening on Port %s', this.address().port);
     });
   });
 };
