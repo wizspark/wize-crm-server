@@ -90,7 +90,7 @@
     },
     "leadSource": {
       "displayName": "Lead Source",
-      "type": "ENUM('Adverstisement','Customer Event','Employee Referral','Partner','Purchased','Trade Show','Webinar','Website','Other')",
+      "type": "ENUM('Advertisement','Customer Event','Employee Referral','Partner','Purchased','Trade Show','Webinar','Website','Other')",
       "defaultValue": null,
       "comment": null
     },

@@ -1,0 +1,62 @@
+[
+  {
+    "accountName": "Aliquam Iaculis Lacus PC",
+    "owner": "Dickerson, Julian",
+    "revenue": 200000000,
+    "industry": "Entertainment"
+  },
+  {
+    "accountName": "Congue Institute",
+    "owner": "Cooley, Ruby",
+    "revenue": 36000000,
+    "industry": "Health Care"
+  },
+  {
+    "accountName": "Cras Dictum Ultricies Ltd",
+    "owner": "Carey, Inga",
+    "revenue": 555000000,
+    "industry": "Manufacturing"
+  },
+  {
+    "accountName": "Egestas A Scelerisque Consulting",
+    "owner": "Cooley, Ruby",
+    "revenue": 47000000,
+    "industry": "Construction"
+  },
+  {
+    "accountName": "Eget Limited",
+    "owner": "Cooley, Ruby",
+    "revenue": 58000000,
+    "industry": "Energy"
+  },
+  {
+    "accountName": "Fusce Mi Institute",
+    "owner": "Herring, Cecilia",
+    "revenue": 98000000,
+    "industry": "Defense"
+  },
+  {
+    "accountName": "In Consectetuer LLP",
+    "owner": "Simon, Tucker",
+    "revenue": 65000000,
+    "industry": "Banking"
+  },
+  {
+    "accountName": "Lacinia Corp.",
+    "owner": "Carey, Inga",
+    "revenue": 77000000,
+    "industry": "Aerospace"
+  },
+  {
+    "accountName": "Leo Company",
+    "owner": "Herring, Cecilia",
+    "revenue": 8000000,
+    "industry": "Pharmaceuticals"
+  },
+  {
+    "accountName": "Vitae Mauris Sit Ltd",
+    "owner": "Kirk, Ethan",
+    "revenue": 3000000,
+    "industry": "Defense"
+  }
+]

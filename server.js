@@ -1,11 +1,16 @@
 require('babel-register');
 
+const seedData = require('./data-seeder').default;
+
 const createServer = ()=>{
   const app = require('./index').default;
   const port = process.env.PORT || 8080;
-  app.createServer().listen(port, function onListen(err) {
-    if (err) throw err;
-    console.info('Wize Loan Pricer Listening on Port %s', this.address().port);
+
+  seedData().then(() => {
+    app.createServer().listen(port, function onListen(err) {
+      if (err) throw err;
+      console.info('Wize Loan Pricer Listening on Port %s', this.address().port);
+    });
   });
 };
 
