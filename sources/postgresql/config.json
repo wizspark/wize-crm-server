@@ -9,7 +9,7 @@
   "dialect": "postgres",
   "options": {
     "sync": {
-      "force": true
+      "force": false
     },
     "logging": false,
     "pool": {
