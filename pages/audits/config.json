@@ -1,7 +1,7 @@
 {
-  "index": 3,
-  "name": "Reports",
-  "route": "reports",
+  "index": 6,
+  "name": "Audits",
+  "route": "wize/admin/audit",
   "pageType": "module",
   "entities": [
     {
@@ -468,5 +468,5 @@
     },
     "customActions": []
   },
-  "layout": "USER"
+  "layout": "SYSTEM"
 }

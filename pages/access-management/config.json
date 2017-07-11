@@ -1,7 +1,7 @@
 {
-  "index": 3,
-  "name": "Reports",
-  "route": "reports",
+  "index": 5,
+  "name": "Access Management",
+  "route": "wize/admin/users",
   "pageType": "module",
   "entities": [
     {
@@ -468,5 +468,5 @@
     },
     "customActions": []
   },
-  "layout": "USER"
+  "layout": "SYSTEM"
 }

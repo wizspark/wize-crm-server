@@ -3,7 +3,7 @@
   "type": "SQL",
   "dbName": "crm",
   "user": "postgres",
-  "password": "wizni@123",
+  "password": "admin@1234",
   "host": "localhost",
   "port": 5432,
   "dialect": "postgres",
