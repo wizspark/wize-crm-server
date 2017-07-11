@@ -1,3 +1,3 @@
 import * as module from '@wizeapps/rule-engine';
 
-export default module.default;
+export default module;

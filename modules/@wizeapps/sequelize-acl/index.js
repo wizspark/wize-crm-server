@@ -1,3 +1,3 @@
 import * as module from '@wizeapps/sequelize-acl';
 
-export default module.default;
+export default module;
