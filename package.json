@@ -9,6 +9,7 @@
     "@wize/runtime-load-routes": "latest",
     "@wize/runtime-metadata": "latest",
     "@wize/sequelize-runtime": "latest",
+    "@wize/rest-runtime": "latest",
     "@wize/sequelize-source": "latest",
     "@wize/soap-runtime": "latest",
     "@wizeapps/charts-runtime": "latest",
