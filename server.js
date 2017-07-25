@@ -31,6 +31,7 @@ const authenticateAndStart = () => {
       setTimeout(authenticateAndStart, 2000);
     })
   } else {
+    console.info('DB not configured in the application.');
     createServer();
   }
 };
