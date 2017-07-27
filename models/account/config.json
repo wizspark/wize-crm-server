@@ -49,7 +49,7 @@
     },
     "revenue": {
       "displayName": "Revenue",
-      "type": "WIZE_MONEY",
+      "type": "DOUBLE",
       "allowNull": true,
       "unique": false,
       "defaultValue": null,

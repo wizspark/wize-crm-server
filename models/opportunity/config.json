@@ -68,7 +68,7 @@
     },
     "value": {
       "displayName": "Value",
-      "type": "WIZE_MONEY",
+      "type": "DOUBLE",
       "allowNull": true,
       "unique": false,
       "defaultValue": null,
