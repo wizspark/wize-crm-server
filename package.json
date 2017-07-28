@@ -4,7 +4,7 @@
   "description": "CRM Server using TypeScript",
   "license": "ISC",
   "readmeFilename": "README.md",
-  "author": {},
+  "author": {"name": "Anjani Kumar"},
   "repository": {
     "type": "git",
     "url": ""
@@ -34,12 +34,12 @@
     "koa": "^2.2.0",
     "koa-bodyparser": "^3.2.0",
     "koa-router": "^7.0.1",
-    "mysql": "^2.12.0",
     "nodemailer": "^4.0.1",
     "pg": "^7.0.2",
     "reflect-metadata": "^0.1.9",
-    "soap": "^0.19.2",
-    "typeorm": "0.0.9"
+    "sequelize": "^4.4.2",
+    "sequelize-typescript": "^0.3.5",
+    "soap": "^0.19.2"
   },
   "scripts": {
     "start": "tsc && node dist/index.js",

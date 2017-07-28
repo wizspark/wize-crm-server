@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
+import {Sequelize} from "sequelize-typescript";
 import * as Koa from "koa";
 import * as Router from "koa-router";
 import * as bodyParser from "koa-bodyparser";
@@ -8,7 +8,13 @@ import {AppRoutes} from "./routes";
 // TODO: Add eslint support
 // TODO: Add test cases support
 // create connection with database
-createConnection().then(async connection => {
+new Sequelize({
+    name: 'crm-server',
+    dialect: 'postgres',
+    username: 'postgres',
+    password: 'admin@1234',
+    modelPaths: [__dirname + '/entity']
+}).sync({force: false}).then(async() => {
 
     // create koa app
     const app = new Koa();

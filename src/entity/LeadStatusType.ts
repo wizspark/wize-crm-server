@@ -1,16 +1,18 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Table, Model, PrimaryKey, Column, AutoIncrement, HasMany} from "sequelize-typescript";
 import {Lead} from './Lead';
 
-@Entity()
-export class LeadStatusType {
+@Table({timestamps: true})
+export class LeadStatusType extends Model<LeadStatusType> {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryKey
+    @AutoIncrement
+    @Column
     id: number;
 
-    @Column()
+    @Column
     name: string;
 
-    @OneToMany(type => Lead, lead => lead.status)
+    @HasMany(() => Lead)
     leads: Lead[];
 
 }

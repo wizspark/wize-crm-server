@@ -1,16 +1,18 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Table, Model, PrimaryKey, Column, AutoIncrement, HasMany} from "sequelize-typescript";
 import {Account} from './Account';
 
-@Entity()
-export class Industry {
+@Table({timestamps: true})
+export class Industry extends Model<Industry> {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryKey
+    @AutoIncrement
+    @Column
     id: number;
 
-    @Column()
+    @Column
     name: string;
 
-    @OneToMany(type => Account, account => account.industry)
+    @HasMany(() => Account)
     accounts: Account[];
 
 }

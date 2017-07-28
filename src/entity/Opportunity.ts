@@ -1,22 +1,28 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
+import {Table, Model, PrimaryKey, AutoIncrement, Column, DataType, BelongsTo, ForeignKey} from "sequelize-typescript";
 import {Account} from './Account';
 
-@Entity()
-export class Opportunity {
+@Table({timestamps: true})
+export class Opportunity extends Model<Opportunity> {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryKey
+    @AutoIncrement
+    @Column
     id: number;
 
-    @Column()
+    @Column
     name: string;
 
-    @Column()
+    @Column
     owner: string;
 
-    @Column()
+    @Column(DataType.DOUBLE)
     revenue: number;
 
-    @ManyToOne(type => Account, account => account.opportunities)
+    @ForeignKey(() => Account)
+    @Column
+    accountId: number;
+
+    @BelongsTo(() => Account)
     account: Account;
 
 }

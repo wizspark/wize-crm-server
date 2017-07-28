@@ -1,39 +1,49 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany} from "typeorm";
+import {Table, Model, Column, AutoIncrement, PrimaryKey, HasMany, BelongsTo, ForeignKey} from "sequelize-typescript";
 import {LeadSourceType} from './LeadSourceType';
 import {LeadStatusType} from './LeadStatusType';
 import {LeadPhone} from './LeadPhone';
 
-@Entity()
-export class Lead {
+@Table({timestamps: true})
+export class Lead extends Model<Lead> {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryKey
+    @AutoIncrement
+    @Column
     id: number;
 
-    @Column()
+    @Column
     name: string;
 
-    @Column()
+    @Column
     title: string;
 
-    @Column()
+    @Column
     email: string;
 
-    @Column()
+    @Column
     companyName: string;
 
-    @Column()
+    @Column
     owner: string;
 
-    @Column()
+    @Column
     dnbScore: number;
 
-    @OneToMany(type => LeadPhone, phone => phone.lead)
+    @HasMany(() => LeadPhone)
     phones: LeadPhone[];
 
-    @ManyToOne(type => LeadSourceType, source => source.leads)
+    @ForeignKey(() => LeadSourceType)
+    @Column
+    sourceId: number;
+
+    @BelongsTo(() => LeadSourceType)
     source: LeadSourceType;
 
-    @ManyToOne(type => LeadStatusType, status => status.leads)
+    @ForeignKey(() => LeadStatusType)
+    @Column
+    leadStatusTypeId: number;
+
+    @BelongsTo(() => LeadStatusType)
     status: LeadStatusType
 
 }

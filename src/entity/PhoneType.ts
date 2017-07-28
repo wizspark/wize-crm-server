@@ -1,16 +1,18 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
+import {Table, Model, PrimaryKey, Column, AutoIncrement, HasMany} from "sequelize-typescript";
 import {LeadPhone} from './LeadPhone';
 
-@Entity()
-export class PhoneType {
+@Table({timestamps: true})
+export class PhoneType extends Model<PhoneType> {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryKey
+    @AutoIncrement
+    @Column
     id: number;
 
-    @Column()
+    @Column
     name: string;
 
-    @ManyToOne(type => LeadPhone, leadPhone => leadPhone.phoneTypes)
-    leadPhone: LeadPhone;
+    @HasMany(() => LeadPhone)
+    leadPhones: LeadPhone[];
 
 }
