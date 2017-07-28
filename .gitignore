@@ -1,9 +1,5 @@
 node_modules
-coverage
-.nyc_output
-*.log
-*.gz
-.idea/
-.vscode/
-*.iml
-.DS_Store
+src/**/*.js
+src/**/*.js.map
+.idea/*
+dist/*

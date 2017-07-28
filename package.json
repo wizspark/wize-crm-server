@@ -1,54 +1,48 @@
 {
-  "name": "crm-server",
+  "name": "crm-server-ts",
   "version": "0.0.0",
-  "description": "Customer Relationship Management",
-  "authors": "Wizni Inc.",
-  "private": true,
-  "dependencies": {
-    "@wize/koa-server": "latest",
-    "@wize/runtime-load-routes": "latest",
-    "@wize/runtime-metadata": "latest",
-    "@wize/sequelize-runtime": "latest",
-    "@wize/rest-runtime": "latest",
-    "@wize/sequelize-source": "latest",
-    "@wize/soap-runtime": "latest",
-    "@wizeapps/charts-runtime": "latest",
-    "@wizeapps/rule-engine": "latest",
-    "@wizeapps/sequelize-acl": "latest",
-    "@wizeapps/sequelize-audit": "latest",
-    "babel-preset-wizni-platform": "^1.0.0",
-    "babel-register": "^6.14.0",
-    "lodash": "^4.17.4"
+  "description": "CRM Server using TypeScript",
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "author": {},
+  "repository": {
+    "type": "git",
+    "url": ""
   },
+  "bugs": {
+    "url": ""
+  },
+  "tags": [],
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "babel-runtime": "^6.11.6",
-    "eslint": "^3.3.1",
-    "eslint-config-airbnb": "^10.0.1",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.1.0",
-    "eslint-plugin-react": "^6.1.2",
-    "mocha": "^3.0.2",
-    "nyc": "^8.1.0",
-    "supertest": "^2.0.0"
+    "@types/chai": "^3.4.34",
+    "@types/chai-http": "0.0.29",
+    "@types/mocha": "^2.2.32",
+    "@types/koa": "^2.0.39",
+    "@types/koa-bodyparser": "^3.0.23",
+    "@types/koa-router": "^7.0.21",
+    "@types/node": "^7.0.4",
+    "@types/nodemailer": "^3.1.0",
+    "@types/soap": "^0.18.0",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.1.2",
+    "ts-node": "^1.6.1",
+    "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-router": "^7.0.1",
+    "mysql": "^2.12.0",
+    "nodemailer": "^4.0.1",
+    "pg": "^7.0.2",
+    "reflect-metadata": "^0.1.9",
+    "soap": "^0.19.2",
+    "typeorm": "0.0.9"
   },
   "scripts": {
-    "start": "node server.js",
-    "lint": "eslint --fix .",
-    "test": "mocha --timeout 15000",
-    "test-cov": "nyc --cache node_modules/mocha/bin/_mocha && nyc report --reporter=lcov"
-  },
-  "nyc": {
-    "exclude": [
-      "node_modules",
-      "**/*/__tests__"
-    ]
-  },
-  "engines": {
-    "node": "6.5.0",
-    "npm": "3.10.3"
-  },
-  "readme": "## Commands\n\n- `npm install` - installs all the dependencies\n- `npm run lint` - run linting\n- `npm test` - run all tests\n- `npm run test-cov` - run all tests with code coverage\n",
-  "readmeFilename": "README.md",
-  "_id": "wize-template@0.0.0"
+    "start": "tsc && node dist/index.js",
+    "test": "mocha --reporter spec --compilers ts:ts-node/register 'test/**/*.test.ts'"
+  }
 }

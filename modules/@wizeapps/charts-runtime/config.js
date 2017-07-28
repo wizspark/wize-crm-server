@@ -1,1 +1,0 @@
-const config = { get() { return {}; } }; export default config;

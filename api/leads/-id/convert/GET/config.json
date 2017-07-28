@@ -1,5 +1,0 @@
-{
-  "name": "Convert Lead to Opportunity",
-  "path": "/leads/:id/convert",
-  "method": "GET"
-}
