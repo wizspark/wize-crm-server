@@ -1,6 +1,7 @@
 import {Context} from "koa";
 
-export class DefaultController {
+export class DefaultController{
+
     /**
      * Checks server health
      * @param context

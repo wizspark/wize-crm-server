@@ -2,17 +2,12 @@ import {Context} from "koa";
 import {Lead} from "../entity/Lead";
 import {getCompanyListing} from "../helper/customerRating/getCompanyListing";
 import {getCompanyScore} from "../helper/customerRating/getCompanyScore";
+import {BaseController} from "./BaseController";
 
-export class LeadController {
-    /**
-     * Get all leads
-     * @param context
-     * @returns {Promise<void>}
-     */
-    get = async(context: Context): Promise<any> => {
-        // return loaded accounts
-        context.body = await Lead.findAndCountAll();
-    };
+export class LeadController extends BaseController {
+    constructor() {
+        super(Lead);
+    }
 
     /**
      * Get lead company listing

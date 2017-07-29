@@ -1,13 +1,8 @@
-import {Context} from "koa";
 import {Opportunity} from "../entity/Opportunity";
+import {BaseController} from "./BaseController";
 
-export class OpportunityController {
-    /**
-     * Get all opportunities
-     * @param context
-     * @returns {Promise<void>}
-     */
-    get = async(context: Context): Promise<any> => {
-        context.body = await Opportunity.findAndCountAll();
+export class OpportunityController extends BaseController {
+    constructor() {
+        super(Opportunity);
     }
 }
