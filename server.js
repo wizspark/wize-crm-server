@@ -10,8 +10,14 @@ const createServer = () => {
   });
 };
 
+let restartCount = 0;
+let timeout;
 const authenticateAndStart = () => {
   const Source = require('./sources/postgresql').default;
+  if(restartCount===3) {
+      clearTimeout(timeout);
+      process.exit(1);
+  }
   if (!Source.invalid) {
     const createModels = require('./models').default;
     Source.authenticate().then(function () {
@@ -28,7 +34,9 @@ const authenticateAndStart = () => {
     }).catch(function (error) {
       console.error(error);
       console.error('Not Connected trying again...');
-      setTimeout(authenticateAndStart, 2000);
+      restartCount++;
+      clearTimeout(timeout);
+      timeout = setTimeout(authenticateAndStart, 2000);
     })
   } else {
     console.info('DB not configured in the application.');
