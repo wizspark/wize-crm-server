@@ -119,8 +119,13 @@ class QuoteDebt {
 class QuoteLiquidity {
     id: number;
     type: string;
-    total: number;
     postRetirementBenefit: boolean;
+    invert: boolean;
+    total: number;
+
+    get effectiveTotal(): number {
+        return this.invert ? -1 * this.total : this.total;
+    }
 }
 
 class QuoteIncome {
@@ -224,8 +229,8 @@ export class Quote {
 
     get netLiquidity(): number {
         return !this.retired
-            ? new Helper().sumFn(this.QuoteLiquidities.filter((liquidity) => !liquidity.postRetirementBenefit), 'total')
-            : new Helper().sumFn(this.QuoteLiquidities, 'total');
+            ? new Helper().sumFn(this.QuoteLiquidities.filter((liquidity) => !liquidity.postRetirementBenefit), 'effectiveTotal')
+            : new Helper().sumFn(this.QuoteLiquidities, 'effectiveTotal');
     }
 
     get pctOfTotalEducationDebt(): number {
