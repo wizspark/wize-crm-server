@@ -110,7 +110,7 @@ class QuoteDebt {
 
     get monthly(): number {
         if (this.calculate)
-            return this.rateFactor !== 0
+            return this.rateFactor === 0
                 ? this.total / 12
                 : (this.invert ? -1 : 1) * new Helper().pmtFn(this.rateFactor / 12, this.numOfPayments, this.total, this.futureValue, this.type);
         return 0;
