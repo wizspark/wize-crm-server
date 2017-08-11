@@ -6,12 +6,14 @@ class DebtType {
     type: number;
     principalField: string;
     invert: boolean;
+    calculate: boolean;
 }
 
 class LiquidityType {
     id: number;
     type: string;
     postRetirementBenefit: boolean;
+    invert: boolean;
 }
 
 class Setting {
@@ -104,15 +106,20 @@ class QuoteDebt {
     principalField: string;
     invert: boolean;
     total: number;
+    calculate: boolean;
 
     get monthly(): number {
-        return this.rateFactor !== 0
-            ? this.total / 12
-            : (this.invert ? -1 : 1) * new Helper().pmtFn(this.rateFactor / 12, this.numOfPayments, this.total, this.futureValue, this.type);
+        if (this.calculate)
+            return this.rateFactor !== 0
+                ? this.total / 12
+                : (this.invert ? -1 : 1) * new Helper().pmtFn(this.rateFactor / 12, this.numOfPayments, this.total, this.futureValue, this.type);
+        return 0;
     }
 
     get annual(): number {
-        return this.monthly * 12;
+        if (this.calculate)
+            return this.monthly * 12;
+        return 0;
     }
 }
 
