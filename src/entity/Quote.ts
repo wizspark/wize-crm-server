@@ -59,10 +59,10 @@ class Helper {
     pmt: string = `function pmt(rate, nperiod, pv, fv, type) {
                         if (!fv) fv = 0;
                         if (!type) type = 0;
-                        if (rate == 0) return -(pv + fv) / nperiod;
+                        if (rate === 0) return -(pv + fv) / nperiod;
                         const pvIf = Math.pow(1 + rate, nperiod);
                         let pmt = rate / (pvIf - 1) * -(pv * pvIf + fv);
-                        if (type == 1) {
+                        if (type === 1) {
                            pmt /= 1 + rate;
                         }
                         return pmt;
@@ -90,10 +90,6 @@ class Helper {
 
     get taxRate(): number {
         return Number(this.settings.filter(setting => setting.key === 'TAX_RATE')[0]);
-    }
-
-    get retirementAge(): number {
-        return Number(this.settings.filter(setting => setting.key === 'RETIREMENT_AGE')[0]);
     }
 }
 
@@ -203,7 +199,11 @@ class QuoteProduct {
 
 export class Prospect {
     id: number;
-    birthDate: Date;
+    birthDate?: Date;
+}
+
+export class QuoteBorrower {
+    id: number;
 }
 
 export class Quote {
@@ -212,15 +212,13 @@ export class Quote {
     loanAmount: number;
     taxRate: number = new Helper().taxRate;
     educationDebt: number;
+    QuoteBorrowers: QuoteBorrower[];
     QuoteDebts: QuoteDebt[];
     QuoteLiquidities: QuoteLiquidity[];
     QuoteIncomes: QuoteIncome[];
     QuoteProducts: QuoteProduct[];
     Prospect: Prospect;
-
-    get retired(): boolean {
-        return new Helper().getAgeFn(this.Prospect.birthDate.toString()) >= new Helper().retirementAge;
-    }
+    retired: boolean;
 
     get totalDebt(): number {
         return new Helper().sumFn(this.QuoteDebts, 'total');
@@ -235,9 +233,7 @@ export class Quote {
     }
 
     get netLiquidity(): number {
-        return !this.retired
-            ? new Helper().sumFn(this.QuoteLiquidities.filter((liquidity) => !liquidity.postRetirementBenefit), 'effectiveTotal')
-            : new Helper().sumFn(this.QuoteLiquidities, 'effectiveTotal');
+        return new Helper().sumFn(this.QuoteLiquidities, 'effectiveTotal');
     }
 
     get pctOfTotalEducationDebt(): number {
